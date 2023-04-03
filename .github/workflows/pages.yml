@@ -1,5 +1,5 @@
-.github/workflows/pages.yml
-name: Pages
+# .github/workflows/pages.yml
+name: Deploy pages
 
 on:
   push:
@@ -13,7 +13,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v2
-      - name: Use node
+        with: submodules: true
+      - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
           node-version: "18.15.0"
